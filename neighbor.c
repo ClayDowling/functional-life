@@ -1,31 +1,18 @@
-#include <assert.h>
-#include <string.h>
+#include "neighbor.h"
 #include "board.h"
 
-bool		board     [X_MAX][Y_MAX];
-
-void 
-board_init()
+int neighbors(int x, int y)
 {
-	memset(board, 0, sizeof(board));
-}
+        int count = 0;
+        int i;
+        int j;
 
-bool 
-board_at(unsigned int x, unsigned int y)
-{
-	assert(x >= 0);
-
-	if (x >= X_MAX) {
-		x = x % X_MAX;
-	}
-	if (y >= Y_MAX) {
-		return false;
-	}
-	return board[x][y];
-}
-
-void 
-board_set(unsigned int x, unsigned int y, bool value)
-{
-	//Do nothing until we test this
+        for(i=-1; i < 2; ++i) {
+                for(j=-1; j < 2; ++j) {
+                        if (board[x + i][y + j] && !(0 == i && 0 == j)) {
+                                ++count;
+                        }
+                }
+        }
+        return count;
 }
