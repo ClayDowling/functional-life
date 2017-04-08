@@ -7,7 +7,7 @@
 #define Y_MAX 100
 
 void board_init();
-bool board_at(unsigned int x, unsigned int y);
+bool board_at(int x, int y);
 void board_set(unsigned int x, unsigned int y, bool value);
 
 #endif

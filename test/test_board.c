@@ -2,8 +2,8 @@
 #include <check.h>
 
 START_TEST(board_init_setsAllFieldsFalse) {
-  unsigned int x;
-  unsigned int y;
+  int x;
+  int y;
   bool foundAlive = false;
 
   board_set(0, 0, true);
@@ -41,6 +41,13 @@ START_TEST(boardAt_wrapsOnXAxis) {
   board_init();
   board_set(0, 0, true);
   ck_assert_int_eq(true, board_at(X_MAX, 0));
+}
+END_TEST
+
+START_TEST(boardAt_wrapsOnNegativeXAxis) {
+  board_init();
+  board_set(X_MAX - 1, 0, true);
+  ck_assert_int_eq(true, board_at(-1, 0));
 }
 END_TEST
 
@@ -84,6 +91,7 @@ TCase *tcase_board(void) {
   tcase_add_test(tc, boardAt_withLocationTrue_returnsTrue);
   tcase_add_test(tc, boardAt_withLocationFalse_returnsFalse);
   tcase_add_test(tc, boardAt_wrapsOnXAxis);
+  tcase_add_test(tc, boardAt_wrapsOnNegativeXAxis);
   tcase_add_test(tc, boardAt_withYOverMax_returnsFalse);
   tcase_add_test(tc, boardSet_toTrue_retrievesTrue);
   tcase_add_test(tc, boardSet_toFalse_retrievesFalse);

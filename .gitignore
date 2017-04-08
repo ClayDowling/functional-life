@@ -3,4 +3,5 @@ functional-life.*
 *.gch
 life
 tags
+.tags*
 test/test_life
