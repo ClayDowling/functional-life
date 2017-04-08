@@ -6,5 +6,6 @@
 Suite *suite_neighbor(void);
 Suite *suite_board(void);
 Suite *suite_neighbor_board(void);
+Suite *suite_iterator(void);
 
 #endif
