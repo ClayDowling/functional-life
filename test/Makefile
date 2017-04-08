@@ -1,4 +1,4 @@
-CFLAGS = `pkg-config --cflags check`
+CFLAGS = `pkg-config --cflags check` -std=c99 -Wconversion
 LIBS = `pkg-config --libs check`
 VPATH=..
 
@@ -6,7 +6,7 @@ TEST_SOURCE = $(wildcard test_*.c)
 TEST_BASE = $(basename $(TEST_SOURCE))
 TEST_OBJECTS = $(addsuffix .o, $(TEST_BASE))
 
-OBJECTS_UNDER_TEST = board.o
+OBJECTS_UNDER_TEST = board.o neighbor.o
 
 FRAMEWORK_OBJECTS = testmain.o
 

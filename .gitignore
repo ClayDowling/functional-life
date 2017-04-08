@@ -1,3 +1,4 @@
 *.o
+*.gch
 life
 test/test_life

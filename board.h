@@ -8,6 +8,8 @@
 
 extern bool board[X_MAX][Y_MAX];
 
-void init_board();
+void board_init();
+bool board_at(unsigned int x, unsigned int y);
+void board_set(unsigned int x, unsigned int y, bool value);
 
 #endif

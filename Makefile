@@ -1,5 +1,7 @@
 .PHONY: all test clean
 
+CFLAGS = -std=c99 -Wconversion
+
 SOURCES=$(wildcard *.c)
 BASES=$(basename $SOURCES)
 OBJECTS=$(addsuffix .o, $BASES)

@@ -7,8 +7,8 @@ int main(int argc, char **argv)
   SRunner *runner;
   int number_fails;
 
-  s = suite_board();
-  runner = srunner_create(s);
+  runner = srunner_create(suite_board());
+  srunner_add_suite(runner, suite_neighbor());
   srunner_run_all(runner, CK_NORMAL);
   number_fails = srunner_ntests_failed(runner);
   srunner_free(runner);
