@@ -6,8 +6,6 @@
 #define X_MAX 100
 #define Y_MAX 100
 
-extern bool board[X_MAX][Y_MAX];
-
 void board_init();
 bool board_at(unsigned int x, unsigned int y);
 void board_set(unsigned int x, unsigned int y, bool value);
