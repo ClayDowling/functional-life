@@ -60,6 +60,14 @@ START_TEST(boardAt_withYOverMax_returnsFalse)
 }
 END_TEST
 
+START_TEST(boardSet_toTrue_retrievesTrue)
+{
+    board_init();
+    board_set(50, 50, true);
+    ck_assert_int_eq(true, board_at(50, 50));
+}
+END_TEST
+
 TCase * tcase_board(void)
 {
 	TCase          *tc;
@@ -70,6 +78,7 @@ TCase * tcase_board(void)
 	tcase_add_test(tc, boardAt_withLocationFalse_returnsFalse);
 	tcase_add_test(tc, boardAt_wrapsOnXAxis);
 	tcase_add_test(tc, boardAt_withYOverMax_returnsFalse);
+    tcase_add_test(tc, boardSet_toTrue_retrievesTrue);
 
 	return tc;
 }

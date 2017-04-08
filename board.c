@@ -27,5 +27,5 @@ board_at(unsigned int x, unsigned int y)
 void 
 board_set(unsigned int x, unsigned int y, bool value)
 {
-	//Do nothing until we test this
+    board[x][y] = value;
 }
