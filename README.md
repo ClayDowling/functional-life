@@ -1,5 +1,12 @@
 # functional-life
-Conway's Game of Life implemented as Test Driven, functional style C code
+Conway's Game of Life implemented as Test Driven, functional style C code.
+
+## The Game
+
+[Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) is
+a mathematical game that begs for computerization.  It's also a very common
+coding kata.  Because of it's simplicity, it's a good way to try out new
+coding styles (like maybe functional programming) or even new languages.
 
 ## Requirements
 
