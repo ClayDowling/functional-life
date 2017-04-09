@@ -15,14 +15,14 @@
 
 START_TEST(neighbors_onEmptyBoard_returnsZero) {
   board_init();
-  ck_assert_int_eq(0, neighbors(TEST_X, TEST_Y));
+  ck_assert_int_eq(0, neighbors(TEST_X, TEST_Y, board_at));
 }
 END_TEST
 
 START_TEST(neighbors_upperLeft_returnsOne) {
   board_init();
   board_set(LEFT_X, UPPER_Y, true);
-  ck_assert_int_eq(1, neighbors(TEST_X, TEST_Y));
+  ck_assert_int_eq(1, neighbors(TEST_X, TEST_Y, board_at));
 }
 END_TEST
 
@@ -30,7 +30,7 @@ START_TEST(neighbors_upperLeftAndLowerRight_returnsTwo) {
   board_init();
   board_set(LEFT_X, UPPER_Y, true);
   board_set(RIGHT_X, LOWER_Y, true);
-  ck_assert_int_eq(2, neighbors(TEST_X, TEST_Y));
+  ck_assert_int_eq(2, neighbors(TEST_X, TEST_Y, board_at));
 }
 END_TEST
 
@@ -44,7 +44,7 @@ START_TEST(neighbors_allNeighbors_returnsEight) {
   board_set(RIGHT_X, UPPER_Y, true);
   board_set(RIGHT_X, CENTER_Y, true);
   board_set(RIGHT_X, LOWER_Y, true);
-  ck_assert_int_eq(8, neighbors(TEST_X, TEST_Y));
+  ck_assert_int_eq(8, neighbors(TEST_X, TEST_Y, board_at));
 }
 END_TEST
 
@@ -59,7 +59,7 @@ START_TEST(neighbors_allNeighborsPlusSelf_returnsEight) {
   board_set(RIGHT_X, CENTER_Y, true);
   board_set(RIGHT_X, LOWER_Y, true);
   board_set(CENTER_X, CENTER_Y, true);
-  ck_assert_int_eq(8, neighbors(TEST_X, TEST_Y));
+  ck_assert_int_eq(8, neighbors(TEST_X, TEST_Y, board_at));
 }
 END_TEST
 

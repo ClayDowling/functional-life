@@ -8,6 +8,6 @@
 
 void board_init();
 int board_at(int x, int y);
-void board_set(unsigned int x, unsigned int y, bool value);
+void board_set(int x, int y, int value);
 
 #endif

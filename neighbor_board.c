@@ -6,7 +6,7 @@ uint8_t board[X_MAX][Y_MAX];
 
 void neighbor_init(void) { memset(board, 0, sizeof(board)); }
 
-uint8_t neighbor_at(int x, int y) {
+int neighbor_at(int x, int y) {
   if (x < 0 || x >= X_MAX)
     return 0;
   if (y < 0 || y >= Y_MAX)
@@ -14,7 +14,7 @@ uint8_t neighbor_at(int x, int y) {
   return board[x][y];
 }
 
-void neighbor_set(int x, int y, uint8_t value) {
+void neighbor_set(int x, int y, int value) {
 
   if (x < 0)
     return;
@@ -25,5 +25,5 @@ void neighbor_set(int x, int y, uint8_t value) {
   if (y >= Y_MAX)
     return;
 
-  board[x][y] = value;
+  board[x][y] = (uint8_t)value;
 }

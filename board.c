@@ -20,6 +20,4 @@ int board_at(int x, int y) {
   return board[x][y];
 }
 
-void board_set(unsigned int x, unsigned int y, bool value) {
-  board[x][y] = value;
-}
+void board_set(int x, int y, int value) { board[x][y] = (bool)value; }

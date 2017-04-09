@@ -10,6 +10,8 @@ int main(int argc, char **argv) {
   srunner_add_suite(runner, suite_neighbor_board());
   srunner_add_suite(runner, suite_iterator());
   srunner_add_suite(runner, suite_life_rules());
+  srunner_add_suite(runner, suite_generation());
+
   srunner_run_all(runner, CK_NORMAL);
   number_fails = srunner_ntests_failed(runner);
   srunner_free(runner);
