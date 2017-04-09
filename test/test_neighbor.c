@@ -48,7 +48,7 @@ START_TEST(neighbors_allNeighbors_returnsEight) {
 }
 END_TEST
 
-START_TEST(neighbors_allNeighborsPlusSelf_returnsSelf) {
+START_TEST(neighbors_allNeighborsPlusSelf_returnsEight) {
   board_init();
   board_set(LEFT_X, UPPER_Y, true);
   board_set(LEFT_X, CENTER_Y, true);
@@ -71,7 +71,7 @@ TCase *tcase_neighbor(void) {
   tcase_add_test(tc, neighbors_upperLeft_returnsOne);
   tcase_add_test(tc, neighbors_upperLeftAndLowerRight_returnsTwo);
   tcase_add_test(tc, neighbors_allNeighbors_returnsEight);
-  tcase_add_test(tc, neighbors_allNeighborsPlusSelf_returnsSelf);
+  tcase_add_test(tc, neighbors_allNeighborsPlusSelf_returnsEight);
 
   return tc;
 }
