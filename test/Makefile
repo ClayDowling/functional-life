@@ -6,7 +6,8 @@ TEST_SOURCE = $(wildcard test_*.c)
 TEST_BASE = $(basename $(TEST_SOURCE))
 TEST_OBJECTS = $(addsuffix .o, $(TEST_BASE))
 
-OBJECTS_UNDER_TEST = board.o neighbor.o neighbor_board.o life_rules.o game.o
+OBJECTS_UNDER_TEST = board.o neighbor.o neighbor_board.o life_rules.o game.o \
+	board_iterator.o
 
 FRAMEWORK_OBJECTS = testmain.o
 

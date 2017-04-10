@@ -3,10 +3,11 @@
 #include "../neighbor_board.h"
 #include <check.h>
 
-uint8_t test_generator(int x, int y, ptrToGetter getter) { return 1; }
+int test_generator(int x, int y, ptrToGetter getter) { return 1; }
 
 START_TEST(boardIterator_byDefault_appliesGeneratorToEachCell) {
   board_init();
+  neighbor_init();
   board_iterator(board_at, neighbor_set, test_generator);
   for (int x = 0; x < X_MAX; ++x) {
     for (int y = 0; y < Y_MAX; ++y) {

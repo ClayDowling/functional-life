@@ -9,5 +9,6 @@ Suite *suite_neighbor_board(void);
 Suite *suite_iterator(void);
 Suite *suite_life_rules(void);
 Suite *suite_generation(void);
+Suite *suite_integration(void);
 
 #endif
