@@ -1,5 +1,5 @@
 #ifndef _LIFE_RULES_H_
-#define _LIFE_RULES_H
+#define _LIFE_RULES_H_
 
 #include "board_iterator.h"
 

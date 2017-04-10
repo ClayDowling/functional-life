@@ -53,8 +53,8 @@ END_TEST
 
 START_TEST(boardAt_withYOverMax_returnsFalse) {
   board_init();
-  for (unsigned int x = 0; x < X_MAX; ++x) {
-    for (unsigned int y = 0; y < Y_MAX; ++y) {
+  for (int x = 0; x < X_MAX; ++x) {
+    for (int y = 0; y < Y_MAX; ++y) {
       board_set(x, y, true);
     }
   }
@@ -71,8 +71,8 @@ END_TEST
 
 START_TEST(boardSet_toFalse_retrievesFalse) {
   board_init();
-  for (unsigned int x = 0; x < X_MAX; ++x) {
-    for (unsigned int y = 0; y < Y_MAX; ++y) {
+  for (int x = 0; x < X_MAX; ++x) {
+    for (int y = 0; y < Y_MAX; ++y) {
       board_set(x, y, true);
     }
   }
