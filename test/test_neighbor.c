@@ -63,6 +63,18 @@ START_TEST(neighbors_allNeighborsPlusSelf_returnsEight) {
 }
 END_TEST
 
+START_TEST(neighbors_inBeacon_produceAlternateBeacon) {
+  board_init();
+  board_set(LEFT_X, UPPER_Y, true);
+  board_set(CENTER_X, CENTER_Y, true);
+
+  ck_assert_int_eq(1, neighbors(LEFT_X, UPPER_Y, board_at));
+  ck_assert_int_eq(2, neighbors(CENTER_X, UPPER_Y, board_at));
+  ck_assert_int_eq(2, neighbors(LEFT_X, CENTER_Y, board_at));
+  ck_assert_int_eq(1, neighbors(CENTER_X, CENTER_Y, board_at));
+}
+END_TEST
+
 TCase *tcase_neighbor(void) {
   TCase *tc;
 
@@ -72,6 +84,7 @@ TCase *tcase_neighbor(void) {
   tcase_add_test(tc, neighbors_upperLeftAndLowerRight_returnsTwo);
   tcase_add_test(tc, neighbors_allNeighbors_returnsEight);
   tcase_add_test(tc, neighbors_allNeighborsPlusSelf_returnsEight);
+  tcase_add_test(tc, neighbors_inBeacon_produceAlternateBeacon);
 
   return tc;
 }

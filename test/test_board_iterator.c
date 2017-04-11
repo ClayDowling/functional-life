@@ -9,6 +9,7 @@ START_TEST(boardIterator_byDefault_appliesGeneratorToEachCell) {
   board_init();
   neighbor_init();
   board_iterator(board_at, neighbor_set, test_generator);
+
   for (int x = 0; x < X_MAX; ++x) {
     for (int y = 0; y < Y_MAX; ++y) {
       ck_assert_int_eq(1, neighbor_at(x, y));
