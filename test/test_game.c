@@ -3,13 +3,19 @@
 #include <check.h>
 
 START_TEST(gameGeneration_withTwoNeighbors_MutatesCellToBeLive) {
-  board_set(0, 1, true);
   board_set(1, 0, true);
+  board_set(1, 1, true);
+  board_set(1, 2, true);
   game_generation();
-  ck_assert_int_eq(1, board_at(0, 0));
-  ck_assert_int_eq(1, board_at(1, 1));
+  ck_assert_int_eq(0, board_at(0, 0));
   ck_assert_int_eq(0, board_at(1, 0));
-  ck_assert_int_eq(0, board_at(0, 1));
+  ck_assert_int_eq(0, board_at(2, 0));
+  ck_assert_int_eq(1, board_at(0, 1));
+  ck_assert_int_eq(1, board_at(1, 1));
+  ck_assert_int_eq(1, board_at(2, 1));
+  ck_assert_int_eq(0, board_at(0, 2));
+  ck_assert_int_eq(0, board_at(1, 2));
+  ck_assert_int_eq(0, board_at(2, 2));
 }
 END_TEST
 
